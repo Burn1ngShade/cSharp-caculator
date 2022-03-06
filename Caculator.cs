@@ -13,9 +13,9 @@ static class Caculator
     //hold all operators which effect 2 numbers
     static char[] doubleOperators = { '*', '+', '^', '-', '/' };
     //hold all operators which effect 1 number
-    static char[] singleOperators = { '%'};
+    static char[] singleOperators = { '%' };
     //hold all shorthand speak eg: p instead of 3.141592....
-    static char[] shortHandOperators = {'p'};
+    static char[] shortHandOperators = { 'p' };
 
     //enter caculator loop : only part of class that can be called from outside
     /// <summary>
@@ -180,19 +180,23 @@ static class Caculator
                 Logger.LogLine("Error: Multiple Decimal Points Cant Be Used One After Another", ConsoleColor.DarkRed);
                 return "Error";
             }
+        }
+
+        for (int i = 0; i < newInput.Length; i++)
+        {
             if (!doubleOperators.Contains(newInput[i]) && !singleOperators.Contains(newInput[i]) && !Char.IsDigit(newInput[i]) && newInput[i] != '.')
             {
                 Logger.LogLine("Error: Unreadable Character In Caculation", ConsoleColor.DarkRed);
                 return "Error";
             }
         }
-      
+
         if (doubleOperators.Contains(newInput[newInput.Length - 1]) || singleOperators.Contains(newInput[newInput.Length - 1]))
         {
             Logger.LogLine("Error: Last Character Of A Caculation Can Not Be A Operator", ConsoleColor.DarkRed);
             return "Error";
         }
-        
+
 
         return newInput;
     }
