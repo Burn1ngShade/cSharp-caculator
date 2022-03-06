@@ -8,10 +8,10 @@
 /// <param name="args"></param>
 static class Caculator
 {
-    //all specific numbers to 13th decimal place
-    //no clue why just choose random number
-    const decimal Pi = (decimal)3.1415926535897;
-    const decimal E = (decimal)2.7182818284590;
+    //all specific numbers to 15th decimal place
+    //no clue why everyone else uses this number
+    const decimal Pi = (decimal)3.141592653589793;
+    const decimal E = (decimal)2.718281828459045;
 
     //hold all operators which effect 2 numbers
     static char[] doubleOperators = {'*', '+', '^', '-', '/'};
