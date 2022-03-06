@@ -1,3 +1,4 @@
+//simple class to handle debug.log included colours and arrays
 static class Logger
 {
     public static void LogLine(string logMessage)
