@@ -1,3 +1,6 @@
+//uses doubles to offer more precision, downside is only only being able to hold numbers to 7.9 * 10^28 instead of 308 but accuracy is needed
+//logger.log is a custom class to handle debug.logs / used to change text colour easily or print multiple lines see logger
+
 //static class so instance dosnt need to / cant be created
 static class Caculator
 {
@@ -101,6 +104,7 @@ static class Caculator
         return caculationNums[0];
     }
 
+    //bassicaly the way it converts the arrays into math / looks a bit finicky but only way i could think of doing it
     private static decimal CaculationWithCharOperator(char operatorChar, decimal num1, decimal num2)
     {
         switch (operatorChar)
@@ -121,6 +125,7 @@ static class Caculator
 
     }
 
+    //same as above but for operators with one number involvled
     private static decimal CaculationWithCharOperator(char operatorChar, decimal num)
     {
         switch (operatorChar)
@@ -131,6 +136,7 @@ static class Caculator
         return 0;
     }
 
+    //checks string given by player and reports errors / removes spaces
     private static string ValidateString(string input)
     {
         if (input.Length == 0)
@@ -183,10 +189,12 @@ static class Caculator
         return newInput;
     }
 
+    //debug mode is for easy testing
     private static string Debug(string input)
     {
         if (input == "/test" || input == "/tests")
         {
+            //dose x amount of test caculations and compares them 2 expected answer if wrong will display extra info
             string[] testCaculations = { "1 + 2 - 3 * 4 / 5", "1000*1000/1000/1000+1000-1000", "1000 / 1000 / 1000 / 1000 / 1000", "1.5 * 2", "1 / 2 * 3 - 4 + 5", "5 ^ 2", "2 ^ 2.1", "%100+%100", "%10+%10" };
             string[] expectedCaculationResults = { "0.6", "1", "0.000000001", "3.0", "2.5", "25", "4.28709385014517", "20", "6.32455532033676" };
             bool[] testCaculationsSuccessResults = new bool[testCaculations.Length];
