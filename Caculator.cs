@@ -2,6 +2,10 @@
 //logger.log is a custom class to handle debug.logs / used to change text colour easily or print multiple lines see logger
 
 //static class so instance dosnt need to / cant be created
+/// <summary>
+/// A Basic Caculator That Has Most Main Arithmetic Functions
+/// </summary>
+/// <param name="args"></param>
 static class Caculator
 {
     const decimal Pi = (decimal)3.1415926535897;
@@ -14,6 +18,10 @@ static class Caculator
     static char[] shortHandOperators = {'p'};
 
     //enter caculator loop : only part of class that can be called from outside
+    /// <summary>
+    /// The Interface For The Caculator That Once Called Functions As The Players Way Of Input
+    /// </summary>
+    /// <param name="args"></param>
     public static void CaculatorInterface()
     {
         Console.WriteLine("\n__________  Isaac's Caculator __________\n");
