@@ -8,14 +8,17 @@
 /// <param name="args"></param>
 static class Caculator
 {
+    //all specific numbers to 13th decimal place
+    //no clue why just choose random number
     const decimal Pi = (decimal)3.1415926535897;
+    const decimal E = (decimal)2.7182818284590;
 
     //hold all operators which effect 2 numbers
-    static char[] doubleOperators = { '*', '+', '^', '-', '/' };
+    static char[] doubleOperators = {'*', '+', '^', '-', '/'};
     //hold all operators which effect 1 number
-    static char[] singleOperators = { '%' };
-    //hold all shorthand speak eg: p instead of 3.141592....
-    static char[] shortHandOperators = { 'p' };
+    static char[] singleOperators = {'%'};
+    //hold all shorthand speak eg: p instead of 3.141592.... aint implmeneted yet
+    static char[] shortHandOperators = {'p', 'e'};
 
     //enter caculator loop : only part of class that can be called from outside
     /// <summary>
@@ -225,6 +228,11 @@ static class Caculator
                 }
 
             }
+        }
+        else if (input == "/hi" || input == "/hello" || input == "/hey" || input == "/yo")
+        {
+            //code will break if not here 100% nesccary and important code
+            Logger.LogLine("heyyyy ;)");
         }
         else Logger.LogLine($"Error: {input} Is Not A Valid Command", ConsoleColor.DarkRed);
         return "Error";
